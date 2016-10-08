@@ -234,7 +234,10 @@ export default class Presentation extends React.Component {
             </Slide>
             <Slide transition={["slide"]} bgImage={images.orange.replace("/", "")}>
               <Title textColor="dark-tertiary">Further Study</Title>
-              <Text>All Slides and notes are available on Github at 
+              <Text>All Slides and notes are available on Github at http://drwd.es/hiIs</Text>
+            </Slide>
+            <Slide transition={["slide"]} bgImage={images.white2.replace("/", "")}>
+              <Title textColor="dark-tertiary">Questions?</Title>
             </Slide>
         </Deck>
       </Spectacle>
