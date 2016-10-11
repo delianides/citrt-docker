@@ -1,0 +1,8 @@
+ version: '2'
+ services:
+   ghost:
+     image: ghost:latest
+     ports:
+       - "7000:2368"
+     restart: always
+     # environment:
