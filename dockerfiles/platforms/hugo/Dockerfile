@@ -1,22 +1,18 @@
 FROM alpine:latest
 MAINTAINER Drew Delianides
 
-ENV HUGO_VERSION=0.17
-RUN apk add --update wget ca-certificates && \
-  cd /tmp/ && \
-  wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-64bit.tgz && \
-  tar xzf hugo_${HUGO_VERSION}_linux-64bit.tgz && \
-  rm -r hugo_${HUGO_VERSION}_linux-64bit.tgz && \
-  mv hugo /usr/bin/hugo && \
-  apk del wget ca-certificates && \
-  rm /var/cache/apk/*
+ENV HUGO_VERSION 0.17
+RUN apk --update add ca-certificates py-pygments py-setuptools wget && rm -rf /var/cache/apk/*
 
-EXPOSE 5000
+RUN wget https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+  tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+  rm -r hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
+  mv hugo_${HUGO_VERSION}_linux_amd64/hugo_${HUGO_VERSION}_linux_amd64 /usr/local/bin/hugo && \
+  chmod +x /usr/local/bin/hugo && \
+  mkdir /blog
 
-VOLUME /src
-VOLUME /dist
+WORKDIR /blog
+EXPOSE 1313
 
-WORKDIR /src
-
-ENTRYPOINT["hugo"]
+ENTRYPOINT ["/usr/local/bin/hugo"]
 

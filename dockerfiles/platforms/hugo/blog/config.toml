@@ -1,0 +1,4 @@
+title = "My New Blog"
+languageCode = "en-us"
+baseurl = "http://localhost:5000"
+theme = "hemingway"

@@ -1,0 +1,16 @@
+version: '2'
+services:
+ hugo:
+   build: .
+   ports:
+     - "5000:1313"
+   volumes:
+     - "./blog:/blog"
+   restart: always
+   entrypoint:
+     - hugo
+     - server
+     - --bind=0.0.0.0
+     - -w
+
+
