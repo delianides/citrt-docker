@@ -5,4 +5,3 @@
      ports:
        - "7000:2368"
      restart: always
-     # environment:
