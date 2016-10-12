@@ -3,7 +3,7 @@ services:
  hugo:
    build: .
    ports:
-     - "5000:1313"
+     - "4000:1313"
    volumes:
      - "./blog:/blog"
    restart: always
