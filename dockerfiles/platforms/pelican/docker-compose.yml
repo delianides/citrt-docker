@@ -3,7 +3,7 @@ services:
   pelican:
     build: .
     ports:
-      - "8000:8000"
+      - "4000:8000"
     volumes:
       - "./blog:/src"
 
