@@ -106,14 +106,37 @@ export default class Presentation extends React.Component {
               Drew Delianides - @delianides
             </Heading>
           </Slide>
-          <Slide transition={["slide"]} bgImage={platforms.wordpress} />
-          <Slide transition={["slide"]} bgImage={platforms.jekyll} />
-          <Slide transition={["slide"]} bgImage={platforms.hugo} />
-          <Slide transition={["slide"]} bgImage={platforms.ghost} />
-          <Slide transition={["slide"]} bgImage={platforms.pelican} />
+          <Slide transition={["slide"]} bgImage={platforms.wordpress} align="flex-end flex-end">
+            <Text size={7} caps bold textColor="black" bgColor="primary" margin={10} padding={10}>
+              https://www.wordpress.org
+            </Text>
+          </Slide>
+          <Slide transition={["slide"]} bgImage={platforms.jekyll} align="flex-end flex-end">
+            <Text size={7} caps bold textColor="black" bgColor="primary" margin={10} padding={10}>
+              https://jekyllrb.com/
+            </Text>
+          </Slide>
+          <Slide transition={["slide"]} bgImage={platforms.hugo} align="flex-end flex-end">
+            <Text size={7} caps bold textColor="black" bgColor="primary" margin={10} padding={10}>
+              http://www.gohugo.io
+            </Text>
+          </Slide>
+          <Slide transition={["slide"]} bgImage={platforms.ghost} align="flex-end flex-end">
+            <Text size={7} caps bold textColor="black" bgColor="primary" margin={10} padding={10}>
+              https://ghost.org/
+            </Text>
+          </Slide>
+          <Slide transition={["slide"]} bgImage={platforms.pelican} align="flex-end flex-end">
+            <Text size={7} caps bold textColor="black" bgColor="primary" margin={10} padding={10}>
+              http://getpelican.com/
+            </Text>
+          </Slide>
           <Slide transition={["slide"]} bgImage={images.black.replace("/", "")}
             notes="35K+ Stars, 10K+ Forks on Github">
             <Image src={"https://d2mw6vgfxwlz2a.cloudfront.net/2016/Feb/docker_logo-1455828502290.png"} margin="0px auto 40px"/>
+            <Text size={7} caps bold textColor="black" bgColor="primary" margin={10} padding={10}>
+              https://www.docker.com/
+            </Text>
           </Slide>
         </Deck>
       </Spectacle>
