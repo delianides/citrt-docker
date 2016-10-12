@@ -1,15 +1,16 @@
-FROM python:3.3-alpine
+FROM alpine:latest
 
 MAINTAINER Drew Delianides
 
-RUN apk -U add --virtual deps build-base python-dev zlib-dev jpeg-dev \
-    make \
-    py-pip \
-    && pip install pelican markdown pelican-gist typogrify docutils beautifulsoup4 pillow \
-    && apk del --purge deps build-base python-dev jpeg-dev zlib-dev \
-    && apk -U add libjpeg \
-    && rm -rf /var/cache/apk/*
+RUN apk -U add python python3 perl make && apk -U add --virtual deps py-pip \
+      && pip3 install pelican Markdown \
+      && apk del deps \
+      && rm -rf /var/cache/apk/*
 
-WORKDIR /blog
+# VOLUME /src
+# WORKDIR /src
 
-CMD pelican content
+COPY run.sh run.sh
+RUN chmod +x run.sh
+
+CMD ["/bin/sh", "run.sh"]
