@@ -3,5 +3,7 @@
    ghost:
      image: ghost:latest
      ports:
-       - "7000:2368"
+       - "4000:2368"
+     volumes:
+       - "./content:/var/lib/ghost/content"
      restart: always
