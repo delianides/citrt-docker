@@ -88,8 +88,7 @@ images are the better.
 
 #### `CMD` and `ENTRYPOINT`
 
-`CMD` is the final command your image will use to start up with when
-it becomes a container. So something like `apachectl start` or `nginx -g`. `ENTRYPOINT` is basically the same thing but you can pass additional flags to the command. For example, maybe you're having trouble getting a webserver to start up; you can pass some kind of debug flag on the end of your `docker run` command which gets passed into the container when it starts up.
+`CMD` is the final command your image will use to start up with when it becomes a container. So something like `apachectl start` or `nginx -g`. `ENTRYPOINT` turns the container into an executable. You can run `CMD` after `ENTRYPOINT` for a default command but you can also override the command when you run the container.
 
 # Docker in Production
 
